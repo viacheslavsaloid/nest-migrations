@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  nest-migrations:
+    image: postgres:latest
+    container_name: nest-migrations
+    environment:
+      POSTGRES_USER: 'postgres'
+      POSTGRES_PASSWORD: 'postgres'
+      POSTGRES_DB: 'nest-migrations'
+    ports:
+      - '5433:5432'
+    expose:
+      - '5433'
+    volumes:
+      - nest-migrations:/var/lib/postgresql/data
+volumes:
+  nest-migrations:
